@@ -1,30 +1,30 @@
 import random
-a = open('Atlas_A.txt','r')
-b = open('Atlas_B.txt','r')
-c = open('Atlas_C.txt','r')
-d = open('Atlas_D.txt','r')
-e = open('Atlas_E.txt','r')
-f = open('Atlas_F.txt','r')
-g = open('Atlas_G.txt','r')
-h = open('Atlas_H.txt','r')
-i = open('Atlas_I.txt','r')
-j = open('Atlas_J.txt','r')
-k = open('Atlas_K.txt','r')
-l = open('Atlas_L.txt','r')
-m = open('Atlas_M.txt','r')
-n = open('Atlas_N.txt','r')
-o = open('Atlas_O.txt','r')
-p = open('Atlas_P.txt','r')
-q = open('Atlas_Q.txt','r')
-r = open('Atlas_R.txt','r')
-s = open('Atlas_S.txt','r')
-t = open('Atlas_T.txt','r')
-u = open('Atlas_U.txt','r')
-v = open('Atlas_V.txt','r')
-w = open('Atlas_W.txt','r')
-x = open('Atlas_X.txt','r')
-y = open('Atlas_Y.txt','r')
-z = open('Atlas_Z.txt','r')
+a = open('atlas_data/Atlas_A.txt','r')
+b = open('atlas_data/Atlas_B.txt','r')
+c = open('atlas_data/Atlas_C.txt','r')
+d = open('atlas_data/Atlas_D.txt','r')
+e = open('atlas_data/Atlas_E.txt','r')
+f = open('atlas_data/Atlas_F.txt','r')
+g = open('atlas_data/Atlas_G.txt','r')
+h = open('atlas_data/Atlas_H.txt','r')
+i = open('atlas_data/Atlas_I.txt','r')
+j = open('atlas_data/Atlas_J.txt','r')
+k = open('atlas_data/Atlas_K.txt','r')
+l = open('atlas_data/Atlas_L.txt','r')
+m = open('atlas_data/Atlas_M.txt','r')
+n = open('atlas_data/Atlas_N.txt','r')
+o = open('atlas_data/Atlas_O.txt','r')
+p = open('atlas_data/Atlas_P.txt','r')
+q = open('atlas_data/Atlas_Q.txt','r')
+r = open('atlas_data/Atlas_R.txt','r')
+s = open('atlas_data/Atlas_S.txt','r')
+t = open('atlas_data/Atlas_T.txt','r')
+u = open('atlas_data/Atlas_U.txt','r')
+v = open('atlas_data/Atlas_V.txt','r')
+w = open('atlas_data/Atlas_W.txt','r')
+x = open('atlas_data/Atlas_X.txt','r')
+y = open('atlas_data/Atlas_Y.txt','r')
+z = open('atlas_data/Atlas_Z.txt','r')
 a = list(a.read().split())
 b = list(b.read().split())
 c = list(c.read().split())
@@ -54,58 +54,17 @@ z = list(z.read().split())
 print("Welcome to the Atlas Game!\n The rules are simple: you have to type a word, and then I will type a word that will start with the same letter, as your word ends. This cycle continues. Type 'exit()' to exit Let's begin!")
 inp = ""
 while inp != "exit()":
-    inp = input('>')
+    turns = 0
+    inp = input('> ')
     inp = inp.lower()
     end = inp[-1]
-    if end == 'a':
-        print(random.choice(a))
-    if end == 'b':
-        print(random.choice(b))
-    if end == 'c':
-        print(random.choice(c))
-    if end == 'd':
-        print(random.choice(d))
-    if end == 'e':
-        print(random.choice(e))
-    if end == 'f':
-        print(random.choice(f))
-    if end == 'g':
-        print(random.choice(g))
-    if end == 'h':
-        print(random.choice(h))
-    if end == 'i':
-        print(random.choice(i))
-    if end == 'j':
-        print(random.choice(j))
-    if end == 'k':
-        print(random.choice(k))
-    if end == 'l':
-        print(random.choice(l))
-    if end == 'm':
-        print(random.choice(m))
-    if end == 'n':
-        print(random.choice(n))
-    if end == 'o':
-        print(random.choice(o))
-    if end == 'p':
-        print(random.choice(p))
-    if end == 'q':
-        print(random.choice(q))
-    if end == 'r':
-        print(random.choice(r))
-    if end == 's':
-        print(random.choice(s))
-    if end == 't':
-        print(random.choice(t))
-    if end == 'u':
-        print(random.choice(u))
-    if end == 'v':
-        print(random.choice(v))
-    if end == 'w':
-        print(random.choice(w))
-    if end == 'x':
-        print(random.choice(x))
-    if end == 'y':
-        print(random.choice(y))
-    if end == 'z':
-        print(random.choice(z))
+    if turns == 0:
+        global aaa
+        aaa = random.choice(globals()[end])
+        print(aaa)
+    elif turns != 0:
+        if aaa[-1] == inp[0]:
+            aaa = random.choice(globals()[end])
+            print(aaa)
+        else:
+            print("Wrong word")
