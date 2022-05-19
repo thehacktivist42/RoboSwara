@@ -5,15 +5,15 @@ Copyright - © 2022, All Rights Reserved.
 
 Please do not copy without permission.  
 
-Directory Guide  
-* RoboSwara
-    * atlas_data
-    * resources
+## Directory Guide  
+* **RoboSwara**
+    * _atlas_data_
+    * _resources_
         * docs
         * media
         * test_code
-    * voice
+    * _voice_
         * eng
         * hin
-    * wordle
+    * _wordle_
         * wordle-main
