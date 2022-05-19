@@ -7,13 +7,14 @@ Please do not copy without permission.
 
 ## Directory Guide  
 * **RoboSwara**
-    * atlas_data **— Contains the code and data for the Atlas game functionality.**
-    * resources
-        * docs **— Contains documentation relevant to the project.**
-        * media **— Contains media, such as images and videos, relevant to the project.**
-        * test_code **— Contains pieces of code that were used to test some functions.**
-    * voice
-        * eng **— Contains English voiceovers.**
-        * hin **— Contains Hindi voiceovers.**
-    * wordle
-        * wordle-main **— Contains the code and resources for the Wordle game functionality.**
+    * main
+       * atlas_data **— Contains the code and data for the Atlas game functionality.**
+       * resources
+           * docs **— Contains documentation relevant to the project.**
+           * media **— Contains media, such as images and videos, relevant to the project.**
+           * test_code **— Contains pieces of code that were used to test some functions.**
+       * voice
+           * eng **— Contains English voiceovers.**
+           * hin **— Contains Hindi voiceovers.**
+       * wordle
+           * wordle-main **— Contains the code and resources for the Wordle game functionality.**
