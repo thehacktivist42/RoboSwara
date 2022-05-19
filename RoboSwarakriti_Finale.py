@@ -29,12 +29,12 @@ from pygame import mixer
 from pygame.mixer import music as m
 Instance = vlc.Instance()
 player = Instance.media_player_new()
-##lullabyList = ["lull1.mp3","lull2.mp3"]
-##bhajanList = ["https://www.youtube.com/watch?v=hALfm47I16c", "https://www.youtube.com/watch?v=scQ0wiF1pAU", "https://www.youtube.com/watch?v=cjW5Ew8T4bQ", "https://www.youtube.com/watch?v=AETFvQonfV8", "https://www.youtube.com/watch?v=Qa_ldaaGwXA"]
-##musicList = ["https://www.youtube.com/watch?v=yUJwC7INGNo", "https://www.youtube.com/watch?v=ZPGi2yBqdqw", "https://www.youtube.com/watch?v=Rmtx9slmodw"]
-##mantraList = ["https://www.youtube.com/watch?v=nwRoHC83wx0", "https://www.youtube.com/watch?v=L-y1sr1qUlE", "https://www.youtube.com/watch?v=96S6hZofsTw", "https://www.youtube.com/watch?v=Wca0YrAib5M", "https://www.youtube.com/watch?v=YeZYMUJErjA", "https://www.youtube.com/watch?v=g71NBj2qOeU"]
-##bollyList = ["https://www.youtube.com/watch?v=OfoXYRc4GbE", "https://www.youtube.com/watch?v=MJyKN-8UncM", "https://www.youtube.com/watch?v=sK7riqg2mr4", "https://www.youtube.com/watch?v=3Dg006VuOMk", "https://www.youtube.com/watch?v=RqiQmj4hlzM", "https://www.youtube.com/watch?v=q_0uF80IZXM"]
-##chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+lullabyList = ["lull1.mp3","lull2.mp3"]
+bhajanList = ["https://www.youtube.com/watch?v=hALfm47I16c", "https://www.youtube.com/watch?v=scQ0wiF1pAU", "https://www.youtube.com/watch?v=cjW5Ew8T4bQ", "https://www.youtube.com/watch?v=AETFvQonfV8", "https://www.youtube.com/watch?v=Qa_ldaaGwXA"]
+musicList = ["https://www.youtube.com/watch?v=yUJwC7INGNo", "https://www.youtube.com/watch?v=ZPGi2yBqdqw", "https://www.youtube.com/watch?v=Rmtx9slmodw"]
+mantraList = ["https://www.youtube.com/watch?v=nwRoHC83wx0", "https://www.youtube.com/watch?v=L-y1sr1qUlE", "https://www.youtube.com/watch?v=96S6hZofsTw", "https://www.youtube.com/watch?v=Wca0YrAib5M", "https://www.youtube.com/watch?v=YeZYMUJErjA", "https://www.youtube.com/watch?v=g71NBj2qOeU"]
+bollyList = ["https://www.youtube.com/watch?v=OfoXYRc4GbE", "https://www.youtube.com/watch?v=MJyKN-8UncM", "https://www.youtube.com/watch?v=sK7riqg2mr4", "https://www.youtube.com/watch?v=3Dg006VuOMk", "https://www.youtube.com/watch?v=RqiQmj4hlzM", "https://www.youtube.com/watch?v=q_0uF80IZXM"]
+chromepath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 r = sr.Recognizer()
 global playing
 playing = False
@@ -296,7 +296,8 @@ while True:
             time.sleep(0.2)'''
 
 ##Proper Credits to the Original Creators of the Music
-'''Red Ribbon Kids for Aaja Ri Aari Nidiya (Lullaby), Neendariya Ho (Lullaby), Sonpari (Lullaby)
+'''
+Red Ribbon Kids for Aaja Ri Aari Nidiya (Lullaby), Neendariya Ho (Lullaby), Sonpari (Lullaby)
 Red Ribbon Musik for Tu Hi Mere Naino Ka Tara (Lullaby)
 Rajshri for Chanda Re Chanda Re (Lullaby)
 Sonic Octave Kids for Jagmag Jugnu (Lullaby)
@@ -312,5 +313,5 @@ Alan Walker for Faded (Instrumental)
 Desi Music Factory for Nehu Da Vyah
 Music Temple for Devi Mantra
 RDC Bhakti Sagar for Om Namo Bhagwate Vasudevaya
-Shemaroo for Om Namah Shivaya'''
-
+Shemaroo for Om Namah Shivaya
+'''
