@@ -9,7 +9,7 @@ GPIO.setup(sensor, GPIO.IN)
 import os
 #os.add_dll_directory(r'C:\Program Files\VideoLAN\VLC')
 #import keyboard
-#import winsound
+import winsound
 import speech_recognition as sr
 import random
 import time
