@@ -43,7 +43,7 @@ pygame.mixer.music.load("voice/hin/introhin.mp3")
 pygame.mixer.music.play()
 time.sleep(7.5)
 '''
-m.load("voice/beep-06.mp3")
+m.load("voice/misc/beep-06.mp3")
 m.play()
 time.sleep(0.5)
 global lang
@@ -115,7 +115,7 @@ def voiceSearch():
                 elif "query" in txt or "question" in txt:
                     text = ''
                     pygame.init()
-                    m.load("voice/beep-06.mp3")
+                    m.load("voice/misc/beep-06.mp3")
                     m.play()
                     time.sleep(1)
                     with sr.Microphone() as source:

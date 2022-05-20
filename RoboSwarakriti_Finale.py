@@ -54,7 +54,7 @@ if lang == "":
     pygame.mixer.music.load("voice/hin/introhin.mp3")
     pygame.mixer.music.play()
     time.sleep(7.5)
-    m.load("voice/beep-06.mp3")
+    m.load("voice/misc/beep-06.mp3")
     m.play()
     time.sleep(0.5)
     with sr.Microphone() as source:
@@ -148,7 +148,7 @@ def voiceSearch():
                 time.sleep(4)
                 countb = countir
                 print(countb)
-                m.load("voice/beep-06.mp3")
+                m.load("voice/misc/beep-06.mp3")
                 m.play()
                 with sr.Microphone() as srcc:
                     r.adjust_for_ambient_noise(srcc, duration = 0.5)
@@ -197,7 +197,7 @@ def voiceSearch():
                 m.load(fstmusic)
                 m.play()
                 time.sleep(4)
-                m.load("voice/beep-06.mp3")
+                m.load("voice/misc/beep-06.mp3")
                 m.play()
                 with sr.Microphone() as srccc:
                     r.adjust_for_ambient_noise(srccc, duration = 0.5)
