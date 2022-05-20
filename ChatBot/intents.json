@@ -15,7 +15,7 @@
         {
             "tag" : "india",
             "patterns" : ["tell me about india", "facts about india", "i want to know about india", "why is india such a good country"],
-            "responses" : ["India is the world's largest democracy with a population of around 1.4 billion people as of May 2022.", "India is rich with cultural heritage and ethos. Did you know, that India has 22 official languages listed in the Constitution, which is the highest number in the world?" ],
+            "responses" : ["India is the world's largest democracy with a population of around 1.4 billion people as of May 2022.", "India is rich with cultural heritage and ethos. Did you know, that India has 22 official languages listed in the Constitution, which is the highest number in the world?", "India is home to many of the world's landmarks, two of them being Taj Mahal, a wonder of the world, and Mawsynram, the wettest place on Earth.", "India's space program has seen great successes. Mangalyaan, the Mars Orbiter Mission, became the first spacecraft to enter the Mars orbit on its first attempt, while Chandrayaan, the Moon Space Mission detected the presence of water on the moon."],
             "set" : ""
         }
     ]
