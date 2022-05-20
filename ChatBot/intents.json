@@ -1,0 +1,22 @@
+{
+    "intents" : [
+        {
+            "tag" : "greeting",
+            "patterns" : ["hi", "hello", "hey", "good day", "hey there", "hello there"],
+            "responses" : ["Hello there. How are you?", "Good to see you, user!", "Hi, how can I help?"],
+            "set" : ""
+        },
+        {
+            "tag" : "entertainment",
+            "patterns" : ["i am bored", "entertain me", "life is boring", "tell me something amusing"],
+            "responses" : ["Here is a fun fact: A sea turtle can live for more than 100 years.", "What do you give a sick lemon? A lemon aid."],
+            "set" : ""
+        },
+        {
+            "tag" : "india",
+            "patterns" : ["tell me about india", "facts about india", "i want to know about india", "why is india such a good country"],
+            "responses" : ["India is the world's largest democracy with a population of around 1.4 billion people as of May 2022.", "India is rich with cultural heritage and ethos. Did you know, that India has 22 official languages listed in the Constitution, which is the highest number in the world?" ],
+            "set" : ""
+        }
+    ]
+}
