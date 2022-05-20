@@ -8,6 +8,7 @@ Please do not copy without permission.
 ## Directory Guide  
 * **RoboSwara**
     * master
+       * ChatBot **— Contains the code and data for the ChatBot functionality.**
        * atlas_data **— Contains the code and data for the Atlas game functionality.**
        * resources
            * docs **— Contains documentation relevant to the project.**
