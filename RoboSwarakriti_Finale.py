@@ -59,7 +59,7 @@ if lang == "":
     time.sleep(0.5)
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source, duration = 0.5)
-        audio1 = r.listen(source)
+        audio1 = r.listen(source, phrase_time_limit = 5)
         text1 = r.recognize_google(audio1)
         text1 = text1.lower()
         print(text1)
@@ -73,26 +73,26 @@ if lang == "":
             pygame.init()
             m.load("voice/hin/hindefault.mp3")
             m.play()
-    prefix = "voice/" + lang + "/"
-    suffix = lang + ".mp3"
-    txt = ''
-    count = 0
-    def pauseVideo():
-        pygame.mixer.music.pause()
-        player.pause()
-    def playVideo():
-        pygame.mixer.music.unpause()
-        player.play()
-    def stopVideo():
-        player.stop()
-        pygame.mixer.music.stop()
+prefix = "voice/" + lang + "/"
+suffix = lang + ".mp3"
+txt = ''
+count = 0
+def pauseVideo():
+    pygame.mixer.music.pause()
+    player.pause()
+def playVideo():
+    pygame.mixer.music.unpause()
+    player.play()
+def stopVideo():
+    player.stop()
+    pygame.mixer.music.stop()
 def voiceSearch():
     while True:
         #try:
         with sr.Microphone() as src:
             working = True
             r.adjust_for_ambient_noise(src, duration = 0.5)
-            aud = r.listen(src)
+            aud = r.listen(src, phrase_time_limit = 5)
             global txt
             global count
             txt = r.recognize_google(aud)
@@ -142,13 +142,17 @@ def voiceSearch():
                 
             elif "bhajan" in txt or "bhajans" in txt:
                 pygame.init()
+                fst1 = "voice/" + lang + "/bhajan1" + lang + ".mp3"
+                m.load(fst1)
+                m.play()
+                time.sleep(4)
                 countb = countir
                 print(countb)
                 m.load("voice/beep-06.mp3")
                 m.play()
                 with sr.Microphone() as srcc:
                     r.adjust_for_ambient_noise(srcc, duration = 0.5)
-                    audio2 = r.listen(srcc)
+                    audio2 = r.listen(srcc, phrase_time_limit = 5)
                     bhaj = r.recognize_google(audio2)
                     bhaj = bhaj.lower()
                     print(bhaj)
@@ -164,6 +168,10 @@ def voiceSearch():
                 medium = Instance.media_new(playbhaj)
                 medium.get_mrl()
                 player.set_media(medium)
+                fst2 = "voice/" + lang + "/bhajan2" + lang + ".mp3"
+                m.load(fst2)
+                m.play()
+                time.sleep(3)
                 player.play()
                 playing = True
                 print(playing)
@@ -184,12 +192,16 @@ def voiceSearch():
                 player.set_media(Media)
                 player.play()
             elif "music" in txt or "songs" in txt:
-                pygame.init()                
+                pygame.init()
+                fstmusic = "voice/" + lang + "/song1" + lang + ".mp3"
+                m.load(fstmusic)
+                m.play()
+                time.sleep(4)
                 m.load("voice/beep-06.mp3")
                 m.play()
                 with sr.Microphone() as srccc:
                     r.adjust_for_ambient_noise(srccc, duration = 0.5)
-                    audio21 = r.listen(srccc)
+                    audio21 = r.listen(srccc, phrase_time_limit = 5)
                     songy = r.recognize_google(audio21)
                     songy = songy.lower()
                     print(songy)
@@ -205,6 +217,10 @@ def voiceSearch():
                 songmedium = Instance.media_new(playsong)
                 songmedium.get_mrl()
                 player.set_media(songmedium)
+                fstmusicc = "voice/" + lang + "/song2" + lang + ".mp3"
+                m.load(fstmusicc)
+                m.play()
+                time.sleep(2)
                 player.play()
             elif "mantra" in txt or "mantras" in txt:
                 urlMel = random.choice(mantraList)
