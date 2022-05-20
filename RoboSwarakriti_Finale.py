@@ -194,6 +194,11 @@ def voiceSearch():
                 Media = Instance.media_new(playurl)
                 Media.get_mrl()
                 player.set_media(Media)
+                pygame.init()
+                mytho = prefix + "mytho" + suffix
+                m.load(mytho)
+                m.play()
+                time.sleep(4)
                 player.play()
             elif "music" in txt or "songs" in txt:
                 pygame.init()
@@ -234,7 +239,11 @@ def voiceSearch():
                 Media = Instance.media_new(playurl)
                 Media.get_mrl()
                 player.set_media(Media)
-                winsound.PlaySound("mantra", winsound.SND_FILENAME)
+                pygame.init()
+                mantra = prefix + "mantratxt" + suffix
+                m.load(mantra)
+                m.play()
+                time.sleep(3)
                 player.play()
             '''elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
                 urlBol = random.choice(bollyList)
