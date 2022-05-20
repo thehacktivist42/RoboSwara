@@ -232,7 +232,7 @@ def voiceSearch():
                 player.set_media(Media)
                 winsound.PlaySound("mantra", winsound.SND_FILENAME)
                 player.play()
-            elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
+            '''elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
                 urlBol = random.choice(bollyList)
                 video = pafy.new(urlBol)
                 bestb = video.getbest()
@@ -241,7 +241,7 @@ def voiceSearch():
                 Media.get_mrl()
                 player.set_media(Media)
                 winsound.PlaySound("bolly", winsound.SND_FILENAME)
-                player.play()
+                player.play()'''
             break
 ##        except:
 ##            pygame.init()
