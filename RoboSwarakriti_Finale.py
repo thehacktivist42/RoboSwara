@@ -2,6 +2,9 @@
 ## Copyright - © 2021, All Rights Reserved.
 ## Please do not copy without permission. Designed by Venkateshwar International School.
 import RPi.GPIO as GPIO
+import json
+with open("data.json") as file:
+    data = json.load(file)
 countir = 0
 sensor = 18
 GPIO.setmode(GPIO.BOARD)
@@ -41,49 +44,48 @@ playing = False
 global countb
 countb = 0
 pygame.init()
-
-pygame.mixer.music.load("voice/eng/introeng.mp3")
-pygame.mixer.music.play()
-time.sleep(8.5)
-pygame.init()
-pygame.mixer.music.load("voice/hin/introhin.mp3")
-pygame.mixer.music.play()
-time.sleep(7.5)
-
-m.load("voice/beep-06.mp3")
-m.play()
-time.sleep(0.5)
 global lang
-lang = ""
-with sr.Microphone() as source:
-    r.adjust_for_ambient_noise(source, duration = 0.5)
-    audio1 = r.listen(source)
-    text1 = r.recognize_google(audio1)
-    text1 = text1.lower()
-    print(text1)
-    if text1 == "english":
-        lang = "eng"
-        pygame.init()
-        m.load("voice/eng/engdefault.mp3")
-        m.play()
-    elif text1 == "hindi":
-        lang = "hin"
-        pygame.init()
-        m.load("voice/hin/hindefault.mp3")
-        m.play()
-prefix = "voice/" + lang + "/"
-suffix = lang + ".mp3"
-txt = ''
-count = 0
-def pauseVideo():
-    pygame.mixer.music.pause()
-    player.pause()
-def playVideo():
-    pygame.mixer.music.unpause()
-    player.play()
-def stopVideo():
-    player.stop()
-    pygame.mixer.music.stop()
+lang = data["lang"]
+if lang == "":
+    pygame.mixer.music.load("voice/eng/introeng.mp3")
+    pygame.mixer.music.play()
+    time.sleep(8.5)
+    pygame.init()
+    pygame.mixer.music.load("voice/hin/introhin.mp3")
+    pygame.mixer.music.play()
+    time.sleep(7.5)
+    m.load("voice/beep-06.mp3")
+    m.play()
+    time.sleep(0.5)
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source, duration = 0.5)
+        audio1 = r.listen(source)
+        text1 = r.recognize_google(audio1)
+        text1 = text1.lower()
+        print(text1)
+        if text1 == "english":
+            lang = "eng"
+            pygame.init()
+            m.load("voice/eng/engdefault.mp3")
+            m.play()
+        elif text1 == "hindi":
+            lang = "hin"
+            pygame.init()
+            m.load("voice/hin/hindefault.mp3")
+            m.play()
+    prefix = "voice/" + lang + "/"
+    suffix = lang + ".mp3"
+    txt = ''
+    count = 0
+    def pauseVideo():
+        pygame.mixer.music.pause()
+        player.pause()
+    def playVideo():
+        pygame.mixer.music.unpause()
+        player.play()
+    def stopVideo():
+        player.stop()
+        pygame.mixer.music.stop()
 def voiceSearch():
     while True:
         #try:
@@ -295,24 +297,3 @@ while True:
             voiceSearch()
         while GPIO.input(sensor):
             time.sleep(0.2)'''
-
-##Proper Credits to the Original Creators of the Music
-'''
-Red Ribbon Kids for Aaja Ri Aari Nidiya (Lullaby), Neendariya Ho (Lullaby), Sonpari (Lullaby)
-Red Ribbon Musik for Tu Hi Mere Naino Ka Tara (Lullaby)
-Rajshri for Chanda Re Chanda Re (Lullaby)
-Sonic Octave Kids for Jagmag Jugnu (Lullaby)
-Paul Paul Channel for Ninna Ninna Lari Gao
-Sanskar TV for Achyutam Keshavam, Ramayan Manka 108
-Sony Music for Hey Govinda Hey Gopala, Shayad
-Anup Jalota for Shri Krishna Govind Hare Murari
-Jagjit Singh for Om Shivay Hari Om Shivay
-T-Series for Hanuman Chalisa, Gayatri Mantra, Agar Tum Saath Ho, Tujhe Kitna Chahne Lage, Bekhayali, Garmi, Shani Mantra, Mahamrityunjaya Mantra
-Solis Music for Instrumental Piano Music
-Marco Cirillo for Guitar Music
-Alan Walker for Faded (Instrumental)
-Desi Music Factory for Nehu Da Vyah
-Music Temple for Devi Mantra
-RDC Bhakti Sagar for Om Namo Bhagwate Vasudevaya
-Shemaroo for Om Namah Shivaya
-'''

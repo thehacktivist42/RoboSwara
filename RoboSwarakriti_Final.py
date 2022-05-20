@@ -128,8 +128,7 @@ def voiceSearch():
                         url =["https://www.google.com/search?q=",text,"&oq=",text,"&aqs=chrome..69i57j0l6.715j0j7&sourceid=chrome&ie=UTF-8"]
                         qq = ''.join(url)
                         time.sleep(1)
-                        webbrowser.get(chromepath).open(qq)
-                        '''
+                        webbrowser.get(chromepath).open(qq)'''
                 elif "fun" in txt or "fun fact" in txt:
                     y = str(random.randint(1,3))
                     fn2 = "ff" + y
