@@ -134,12 +134,19 @@ def voiceSearch():
                 ff = prefix + fn2 + suffix
                 m.load(ff)
                 m.play()
-                
             elif "india fact" in txt or "india facts" in txt or "india" in txt:
                 z= str(random.randint(1,4))
                 fn3 = "iff" + z
                 iff = prefix + fn3 + suffix
-                
+                pygame.init()
+                m.load(iff)
+                m.play()
+                time.sleep(3)
+                iff2 = str(random.randint(1,3))
+                ifn = "iff" + iff2
+                iff3 = prefix + ifn + suffix
+                m.load(iff3)
+                m.play()
             elif "bhajan" in txt or "bhajans" in txt:
                 pygame.init()
                 fst1 = "voice/" + lang + "/bhajan1" + lang + ".mp3"
@@ -178,10 +185,7 @@ def voiceSearch():
                 '''if GPIO.input(sensor) and countir != countb and playing:
                     player.stop()
                     playing = False
-                    print(playing)'''
-                
-                
-                
+                    print(playing)'''       
             elif "mythology"in txt or "myth" in txt or "mytho" in txt or "tale" in txt or "mythological" in txt:
                 urlM = "https://www.youtube.com/watch?v=eEdfzH5mkQo"
                 video = pafy.new(urlM)
