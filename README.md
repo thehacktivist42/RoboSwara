@@ -18,3 +18,22 @@ Please do not copy without permission.
            * hin **— Contains Hindi voiceovers.**
        * wordle
            * wordle-main **— Contains the code and resources for the Wordle game functionality.**
+
+## Credits for Music
+* Red Ribbon Kids for Aaja Ri Aari Nidiya (Lullaby), Neendariya Ho (Lullaby), Sonpari (Lullaby)
+* Red Ribbon Musik for Tu Hi Mere Naino Ka Tara (Lullaby)
+* Rajshri for Chanda Re Chanda Re (Lullaby)
+* Sonic Octave Kids for Jagmag Jugnu (Lullaby)
+* Paul Paul Channel for Ninna Ninna Lari Gao
+* Sanskar TV for Achyutam Keshavam, Ramayan Manka 108
+* Sony Music for Hey Govinda Hey Gopala, Shayad
+* Anup Jalota for Shri Krishna Govind Hare Murari
+* Jagjit Singh for Om Shivay Hari Om Shivay
+* T-Series for Hanuman Chalisa, Gayatri Mantra, Agar Tum Saath Ho, Tujhe Kitna Chahne Lage, Bekhayali, Garmi, Shani Mantra, Mahamrityunjaya Mantra
+* Solis Music for Instrumental Piano Music
+* Marco Cirillo for Guitar Music
+* Alan Walker for Faded (Instrumental)
+* Desi Music Factory for Nehu Da Vyah
+* Music Temple for Devi Mantra
+* RDC Bhakti Sagar for Om Namo Bhagwate Vasudevaya
+* Shemaroo for Om Namah Shivaya
