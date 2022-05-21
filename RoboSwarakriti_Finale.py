@@ -1,4 +1,4 @@
-## This is the source code for the Digital Edition of RoboSwaraKriti -- Har Umra ke liye Humumra!
+## This is the source code for the Physical Edition of RoboSwaraKriti -- Har Umra ke liye Humumra!
 ## Copyright - © 2021, All Rights Reserved.
 ## Please do not copy without permission. Designed by Venkateshwar International School.
 import RPi.GPIO as GPIO
