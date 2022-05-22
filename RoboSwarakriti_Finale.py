@@ -246,13 +246,16 @@ def voiceSearch():
                 time.sleep(3)
                 player.play()
             elif "search" in txt or "query" in txt or "sawaal" in txt or "sawal" in txt or "prashna" in txt or "prashn" in txt or "saval" in txt or "savaal" in txt or "question" in txt:
+                print(search)
+                pygame.init()
+                m.load("voice/misc/beep-06.mp3")
+                m.play()
                 with sr.Microphone() as srce:
                     r.adjust_for_ambient_noise(srce, duration = 0.5)
                     audiosearch = r.listen(srce, phrase_time_limit = 5)
                     search = r.recognize_google(audiosearch)
-                    search = search.lower()
-                    search = search.replace(" ", "%20")
-                    print(search)
+                search = search.lower()
+                search = search.replace(" ", "%20")
             '''elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
                 urlBol = random.choice(bollyList)
                 video = pafy.new(urlBol)
