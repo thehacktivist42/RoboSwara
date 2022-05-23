@@ -2,6 +2,8 @@
 ## Copyright - © 2021, All Rights Reserved.
 ## Please do not copy without permission. Designed by Venkateshwar International School.
 import RPi.GPIO as GPIO
+import pyttsx3
+engine = pyttsx3.init()
 import json
 with open("data.json") as file:
     data = json.load(file)
@@ -41,6 +43,27 @@ playing = False
 global countb
 countb = 0
 pygame.init()
+global voice
+voice = data["voice"]
+if voice == "":
+    m.load("voice/misc/intro.mp3")
+    time.sleep(10)
+    m.load("voice/misc/beep-06.mp3")
+    time.sleep(0.5)
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source, duration = 0.5)
+        voicetext = r.recognize_google(r.listen(source, phrase_time_limit = 5)).lower()
+    print(voicetext)
+    if voicetext == "boy" or voicetext == "male" or voicetext == "mail" or voicetext == "bye" or voicetext == "ladka":
+        voice = "male"
+        data["voice"] = "male"
+        with open("data.json") as file:
+            json.dump(data, file)
+    if voicetext == "girl" or voicetext == "gull" or voicetext == "gall" or voicetext == "gal" or voicetext == "female" or voicetext == "ladki":
+        voice = "female"
+        data["voice"] = "female"
+        with open("data.json") as file:
+            json.dump(data, file)
 global lang
 lang = data["lang"]
 if lang == "":
@@ -62,17 +85,20 @@ if lang == "":
         print(text1)
         if text1 == "english":
             lang = "eng"
+            data["lang"] = "eng"
+            with open("data.json") as file:
+                json.dump(data, file)
             pygame.init()
             m.load("voice/eng/engdefault.mp3")
             m.play()
         elif text1 == "hindi":
             lang = "hin"
+            data["lang"] = "hin"
+            with open("data.json") as file:
+                json.dump(data, file)
             pygame.init()
             m.load("voice/hin/hindefault.mp3")
-            m.play()
-voice = data["voice"]
-if voice == "":
-    
+            m.play() 
 prefix = "voice/" + lang + "/"
 suffix = lang + ".mp3"
 txt = ''
