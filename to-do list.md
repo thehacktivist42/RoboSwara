@@ -1,11 +1,11 @@
-* Project file
+* ~~Project file~~
 * Voice-overs
 * Video
     * Shooting
     * Content
     * Compiling
 * Poster
-* Brochure
+* ~~Brochure~~
 * Assembling main toy
 * QR Code
 * Testing
