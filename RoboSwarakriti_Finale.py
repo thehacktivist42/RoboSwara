@@ -135,18 +135,13 @@ def voiceSearch():
                 m.load(ff)
                 m.play()
             elif "india fact" in txt or "india facts" in txt or "india" in txt:
-                z= str(random.randint(1,4))
+                z= str(random.randint(1,3))
                 fn3 = "iff" + z
                 iff = prefix + fn3 + suffix
                 pygame.init()
                 m.load(iff)
                 m.play()
                 time.sleep(3)
-                iff2 = str(random.randint(1,3))
-                ifn = "iff" + iff2
-                iff3 = prefix + ifn + suffix
-                m.load(iff3)
-                m.play()
             elif "bhajan" in txt or "bhajans" in txt:
                 pygame.init()
                 fst1 = "voice/" + lang + "/bhajan1" + lang + ".mp3"
@@ -187,19 +182,22 @@ def voiceSearch():
                     playing = False
                     print(playing)'''       
             elif "mythology"in txt or "myth" in txt or "mytho" in txt or "tale" in txt or "mythological" in txt:
-                urlM = "https://www.youtube.com/watch?v=eEdfzH5mkQo"
-                video = pafy.new(urlM)
-                bestm = video.getbestaudio()
-                playurl = bestm.url
-                Media = Instance.media_new(playurl)
-                Media.get_mrl()
-                player.set_media(Media)
-                pygame.init()
-                mytho = prefix + "mytho" + suffix
-                m.load(mytho)
-                m.play()
-                time.sleep(4)
-                player.play()
+                try:
+                    urlM = "https://www.youtube.com/watch?v=eEdfzH5mkQo"
+                    video = pafy.new(urlM)
+                    bestm = video.getbestaudio()
+                    playurl = bestm.url
+                    Media = Instance.media_new(playurl)
+                    Media.get_mrl()
+                    player.set_media(Media)
+                    pygame.init()
+                    mytho = prefix + "mytho" + suffix
+                    m.load(mytho)
+                    m.play()
+                    time.sleep(4)
+                    player.play()
+                except sr.UnknownValueError:
+                    continue
             elif "music" in txt or "songs" in txt:
                 pygame.init()
                 fstmusic = "voice/" + lang + "/song1" + lang + ".mp3"
@@ -232,19 +230,22 @@ def voiceSearch():
                 time.sleep(2)
                 player.play()
             elif "mantra" in txt or "mantras" in txt:
-                urlMel = random.choice(mantraList)
-                video = pafy.new(urlMel)
-                bestmel = video.getbest()
-                playurl = bestmel.url
-                Media = Instance.media_new(playurl)
-                Media.get_mrl()
-                player.set_media(Media)
-                pygame.init()
-                mantra = prefix + "mantratxt" + suffix
-                m.load(mantra)
-                m.play()
-                time.sleep(3)
-                player.play()
+                try:
+                    urlMel = random.choice(mantraList)
+                    video = pafy.new(urlMel)
+                    bestmel = video.getbest()
+                    playurl = bestmel.url
+                    Media = Instance.media_new(playurl)
+                    Media.get_mrl()
+                    player.set_media(Media)
+                    pygame.init()
+                    mantra = prefix + "mantratxt" + suffix
+                    m.load(mantra)
+                    m.play()
+                    time.sleep(3)
+                    player.play()
+                except sr.UnknownValueError:
+                    continue
             elif "search" in txt or "query" in txt or "sawaal" in txt or "sawal" in txt or "prashna" in txt or "prashn" in txt or "saval" in txt or "savaal" in txt or "question" in txt:
                 print(search)
                 pygame.init()
