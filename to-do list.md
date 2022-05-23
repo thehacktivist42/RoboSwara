@@ -7,7 +7,7 @@
 * Poster
 * ~~Brochure~~
 * Assembling main toy
-* QR Code
+* ~~QR Code~~
 * Testing
 * Farm thingy
     * Voiceovers
