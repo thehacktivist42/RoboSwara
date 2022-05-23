@@ -10,8 +10,6 @@ sensor = 18
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(sensor, GPIO.IN)
 import os
-#os.add_dll_directory(r'C:\Program Files\VideoLAN\VLC')
-#import keyboard
 import winsound
 import speech_recognition as sr
 import random
@@ -20,7 +18,6 @@ import tkinter
 from tkinter import messagebox
 import tkinter
 import tkinter.ttk
-#from PIL import ImageTk, Image
 import time
 import webbrowser
 import pygame
@@ -73,6 +70,9 @@ if lang == "":
             pygame.init()
             m.load("voice/hin/hindefault.mp3")
             m.play()
+voice = data["voice"]
+if voice == "":
+    
 prefix = "voice/" + lang + "/"
 suffix = lang + ".mp3"
 txt = ''
