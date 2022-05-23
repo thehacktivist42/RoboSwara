@@ -31,7 +31,7 @@ from pygame import mixer
 from pygame.mixer import music as m
 Instance = vlc.Instance()
 player = Instance.media_player_new()
-lullabyList = ["lull1.mp3","lull2.mp3"]
+lullabyList = ["https://www.youtube.com/watch?v=biH3CvnrQrE", "https://www.youtube.com/watch?v=uV--llqA-VI", "https://www.youtube.com/watch?v=idNycbgugPU", "https://www.youtube.com/watch?v=LvRxzRX5WS0"]
 bhajanList = ["https://www.youtube.com/watch?v=hALfm47I16c", "https://www.youtube.com/watch?v=scQ0wiF1pAU", "https://www.youtube.com/watch?v=cjW5Ew8T4bQ", "https://www.youtube.com/watch?v=AETFvQonfV8", "https://www.youtube.com/watch?v=Qa_ldaaGwXA"]
 musicList = ["https://www.youtube.com/watch?v=yUJwC7INGNo", "https://www.youtube.com/watch?v=ZPGi2yBqdqw", "https://www.youtube.com/watch?v=Rmtx9slmodw"]
 mantraList = ["https://www.youtube.com/watch?v=nwRoHC83wx0", "https://www.youtube.com/watch?v=L-y1sr1qUlE", "https://www.youtube.com/watch?v=96S6hZofsTw", "https://www.youtube.com/watch?v=Wca0YrAib5M", "https://www.youtube.com/watch?v=YeZYMUJErjA", "https://www.youtube.com/watch?v=g71NBj2qOeU"]
@@ -99,7 +99,7 @@ if lang == "":
             pygame.init()
             m.load("voice/hin/hindefault.mp3")
             m.play() 
-prefix = "voice/" + lang + "/"
+prefix = "voice/" + voice + "/"+  lang + "/"
 suffix = lang + ".mp3"
 txt = ''
 count = 0
@@ -113,186 +113,184 @@ def stopVideo():
     player.stop()
     pygame.mixer.music.stop()
 def voiceSearch():
-    while True:
+    #while True:
         #try:
-        with sr.Microphone() as src:
-            working = True
-            r.adjust_for_ambient_noise(src, duration = 0.5)
-            aud = r.listen(src, phrase_time_limit = 5)
-            global txt
-            global count
-            txt = r.recognize_google(aud)
-            txt = txt.lower()
-            print(txt)
-            count += 1
-            if "lullaby" in txt or "lala bhai" in txt or "lalla bhai" in txt or "raju bhai" in txt or "radha bhai" in txt or "alibi" in txt or "bhai" in txt or "lori" in txt or "lohri" in txt or "lodi" in txt or "lory" in txt or "loree" in txt or "lohdi" in txt or "tod" in txt or "tohr" in txt or "tohd" in txt or "taud" in txt or "taulh" in txt or "tauhr" in txt:
-                lull = "voice/" + lang + "/lullaby" + lang + ".mp3"
-                print(lull)
-                pygame.init()
-                pygame.mixer.music.load(lull)
-                pygame.mixer.music.play()
-                time.sleep(2.2)
-                pygame.init()
-                pygame.mixer.music.load("lull1.mp3")
-                pygame.mixer.music.play()
-                
-            elif "joke" in txt or "jokes" in txt or "chutkula" in txt or "chutkule" in txt:
-                x = str(random.randint(1,3))
-                jk = "voice/" + lang + "/joketxt" + lang + ".mp3"
-                print(jk)
-                pygame.init()
-                pygame.mixer.music.load(jk)
-                pygame.mixer.music.play()
-                time.sleep(3.5)
-                jk1 = "voice/" + lang + "/joke" + x + lang + ".mp3"
-                pygame.init()
-                pygame.mixer.music.load(jk1)
-                pygame.mixer.music.play()
-                
-            elif "fun" in txt or "fun fact" in txt:
-                fft = "voice/" + lang + "/fftxt" + lang + ".mp3"
-                pygame.init()
-                m.load(fft)
-                m.play()
-                time.sleep(2.5)
-                y = str(random.randint(1,3))
-                fn2 = "ff" + y
-                ff = prefix + fn2 + suffix
-                m.load(ff)
-                m.play()
-            elif "india fact" in txt or "india facts" in txt or "india" in txt:
-                z= str(random.randint(1,3))
-                fn3 = "iff" + z
-                iff = prefix + fn3 + suffix
-                pygame.init()
-                m.load(iff)
-                m.play()
-                time.sleep(3)
-            elif "bhajan" in txt or "bhajans" in txt:
-                pygame.init()
-                fst1 = "voice/" + lang + "/bhajan1" + lang + ".mp3"
-                m.load(fst1)
-                m.play()
-                time.sleep(4)
-                countb = countir
-                print(countb)
-                m.load("voice/misc/beep-06.mp3")
-                m.play()
-                with sr.Microphone() as srcc:
-                    r.adjust_for_ambient_noise(srcc, duration = 0.5)
-                    audio2 = r.listen(srcc, phrase_time_limit = 5)
-                    bhaj = r.recognize_google(audio2)
-                    bhaj = bhaj.lower()
-                    print(bhaj)
-                bhaj1 = bhaj.replace(" ", "%20")
-                print(bhaj1)
-                bhajhtml = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + bhaj1)
-                ids = re.findall(r"watch\?v=(\S{11})", bhajhtml.read().decode())
-                bhajfinal = "https://www.youtube.com/watch?v=" + ids[0]
-                print(bhajfinal)
-                bhajaudio = pafy.new(bhajfinal)
-                bestbhaj = bhajaudio.getbestaudio()
-                playbhaj = bestbhaj.url
-                medium = Instance.media_new(playbhaj)
-                medium.get_mrl()
-                player.set_media(medium)
-                fst2 = "voice/" + lang + "/bhajan2" + lang + ".mp3"
-                m.load(fst2)
-                m.play()
-                time.sleep(3)
-                player.play()
-                playing = True
-                print(playing)
-                '''if GPIO.input(sensor) and countir != countb and playing:
-                    player.stop()
-                    playing = False
-                    print(playing)'''       
-            elif "mythology"in txt or "myth" in txt or "mytho" in txt or "tale" in txt or "mythological" in txt:
-                try:
-                    urlM = "https://www.youtube.com/watch?v=eEdfzH5mkQo"
-                    video = pafy.new(urlM)
-                    bestm = video.getbestaudio()
-                    playurl = bestm.url
-                    Media = Instance.media_new(playurl)
-                    Media.get_mrl()
-                    player.set_media(Media)
-                    pygame.init()
-                    mytho = prefix + "mytho" + suffix
-                    m.load(mytho)
-                    m.play()
-                    time.sleep(4)
-                    player.play()
-                except sr.UnknownValueError:
-                    continue
-            elif "music" in txt or "songs" in txt:
-                pygame.init()
-                fstmusic = "voice/" + lang + "/song1" + lang + ".mp3"
-                m.load(fstmusic)
-                m.play()
-                time.sleep(4)
-                m.load("voice/misc/beep-06.mp3")
-                m.play()
-                with sr.Microphone() as srccc:
-                    r.adjust_for_ambient_noise(srccc, duration = 0.5)
-                    audio21 = r.listen(srccc, phrase_time_limit = 5)
-                    songy = r.recognize_google(audio21)
-                    songy = songy.lower()
-                    print(songy)
-                songy1 = songy.replace(" ", "%20")
-                print(songy1)
-                songhtml = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + songy1)
-                ids = re.findall(r"watch\?v=(\S{11})", songhtml.read().decode())
-                songfinal = "https://www.youtube.com/watch?v=" + ids[0]
-                print(songfinal)
-                songaudio = pafy.new(songfinal)
-                bestsong = songaudio.getbestaudio()
-                playsong = bestsong.url
-                songmedium = Instance.media_new(playsong)
-                songmedium.get_mrl()
-                player.set_media(songmedium)
-                fstmusicc = "voice/" + lang + "/song2" + lang + ".mp3"
-                m.load(fstmusicc)
-                m.play()
-                time.sleep(2)
-                player.play()
-            elif "mantra" in txt or "mantras" in txt:
-                try:
-                    urlMel = random.choice(mantraList)
-                    video = pafy.new(urlMel)
-                    bestmel = video.getbest()
-                    playurl = bestmel.url
-                    Media = Instance.media_new(playurl)
-                    Media.get_mrl()
-                    player.set_media(Media)
-                    pygame.init()
-                    mantra = prefix + "mantratxt" + suffix
-                    m.load(mantra)
-                    m.play()
-                    time.sleep(3)
-                    player.play()
-                except sr.UnknownValueError:
-                    continue
-            elif "search" in txt or "query" in txt or "sawaal" in txt or "sawal" in txt or "prashna" in txt or "prashn" in txt or "saval" in txt or "savaal" in txt or "question" in txt:
-                print(search)
-                pygame.init()
-                m.load("voice/misc/beep-06.mp3")
-                m.play()
-                with sr.Microphone() as srce:
-                    r.adjust_for_ambient_noise(srce, duration = 0.5)
-                    audiosearch = r.listen(srce, phrase_time_limit = 5)
-                    search = r.recognize_google(audiosearch)
-                search = search.lower()
-                search = search.replace(" ", "%20")
-            '''elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
-                urlBol = random.choice(bollyList)
-                video = pafy.new(urlBol)
-                bestb = video.getbest()
-                playurl = bestb.url
+    with sr.Microphone() as src:
+        working = True
+        r.adjust_for_ambient_noise(src, duration = 0.5)
+        aud = r.listen(src, phrase_time_limit = 5)
+        global txt
+        global count
+        txt = r.recognize_google(aud)
+        txt = txt.lower()
+        print(txt)
+        count += 1
+        if "lullaby" in txt or "lala bhai" in txt or "lalla bhai" in txt or "raju bhai" in txt or "radha bhai" in txt or "alibi" in txt or "bhai" in txt or "lori" in txt or "lohri" in txt or "lodi" in txt or "lory" in txt or "loree" in txt or "lohdi" in txt:
+            lull = prefix + "/lullaby" + suffix
+            print(lull)
+            pygame.init()
+            pygame.mixer.music.load(lull)
+            pygame.mixer.music.play()
+            time.sleep(2.2)
+            lullaudio = pafy.new(random.choice(lullabyList))
+            medium = Instance.media_new(lullaudio.getbestaudio().url)
+            medium.get_mrl()
+            player.set_media(medium)
+            player.play()
+        elif "joke" in txt or "jokes" in txt or "chutkula" in txt or "chutkule" in txt:
+            x = str(random.randint(1,3))
+            jk = prefix + "/joketxt" + suffix
+            print(jk)
+            pygame.init()
+            pygame.mixer.music.load(jk)
+            pygame.mixer.music.play()
+            time.sleep(3.5)
+            jk1 = prefix+ "/joke" + x + suffix
+            pygame.init()
+            pygame.mixer.music.load(jk1)
+            pygame.mixer.music.play()
+            
+        elif "fun" in txt or "fun fact" in txt:
+            fft = prefix + "/fftxt" + suffix
+            pygame.init()
+            m.load(fft)
+            m.play()
+            time.sleep(2.5)
+            y = str(random.randint(1,3))
+            fn2 = "ff" + y
+            ff = prefix + fn2 + suffix
+            m.load(ff)
+            m.play()
+        elif "india fact" in txt or "india facts" in txt or "india" in txt:
+            z= str(random.randint(1,3))
+            fn3 = "iff" + z
+            iff = prefix + fn3 + suffix
+            pygame.init()
+            m.load(iff)
+            m.play()
+            time.sleep(3)
+        elif "bhajan" in txt or "bhajans" in txt:
+            pygame.init()
+            fst1 = prefix+ "/bhajan1" + suffix
+            m.load(fst1)
+            m.play()
+            time.sleep(4)
+            countb = countir
+            print(countb)
+            m.load("voice/misc/beep-06.mp3")
+            m.play()
+            with sr.Microphone() as srcc:
+                r.adjust_for_ambient_noise(srcc, duration = 0.5)
+                audio2 = r.listen(srcc, phrase_time_limit = 5)
+                bhaj = r.recognize_google(audio2)
+                bhaj = bhaj.lower()
+                print(bhaj)
+            bhaj1 = bhaj.replace(" ", "%20")
+            print(bhaj1)
+            bhajhtml = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + bhaj1)
+            ids = re.findall(r"watch\?v=(\S{11})", bhajhtml.read().decode())
+            bhajfinal = "https://www.youtube.com/watch?v=" + ids[0]
+            print(bhajfinal)
+            bhajaudio = pafy.new(bhajfinal)
+            bestbhaj = bhajaudio.getbestaudio()
+            playbhaj = bestbhaj.url
+            medium = Instance.media_new(playbhaj)
+            medium.get_mrl()
+            player.set_media(medium)
+            fst2 = prefix + "/bhajan2" + suffix
+            m.load(fst2)
+            m.play()
+            time.sleep(3)
+            player.play()
+            playing = True
+            print(playing)
+            '''if GPIO.input(sensor) and countir != countb and playing:
+                player.stop()
+                playing = False
+                print(playing)'''       
+        elif "mythology"in txt or "myth" in txt or "mytho" in txt or "tale" in txt or "mythological" in txt:
+            try:
+                urlM = "https://www.youtube.com/watch?v=eEdfzH5mkQo"
+                video = pafy.new(urlM)
+                bestm = video.getbestaudio()
+                playurl = bestm.url
                 Media = Instance.media_new(playurl)
                 Media.get_mrl()
                 player.set_media(Media)
-                winsound.PlaySound("bolly", winsound.SND_FILENAME)
-                player.play()'''
+                pygame.init()
+                mytho = prefix + "mytho" + suffix
+                m.load(mytho)
+                m.play()
+                time.sleep(4)
+                player.play()
+            except:
+                raise KeyboardInterrupt
+        elif "music" in txt or "songs" in txt:
+            pygame.init()
+            fstmusic = prefix + "/song1" + suffix
+            m.load(fstmusic)
+            m.play()
+            time.sleep(4)
+            m.load("voice/misc/beep-06.mp3")
+            m.play()
+            with sr.Microphone() as srccc:
+                r.adjust_for_ambient_noise(srccc, duration = 0.5)
+                audio21 = r.listen(srccc, phrase_time_limit = 5)
+                songy = r.recognize_google(audio21)
+                songy = songy.lower()
+                print(songy)
+            songy1 = songy.replace(" ", "%20")
+            print(songy1)
+            songhtml = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + songy1)
+            ids = re.findall(r"watch\?v=(\S{11})", songhtml.read().decode())
+            songfinal = "https://www.youtube.com/watch?v=" + ids[0]
+            print(songfinal)
+            songaudio = pafy.new(songfinal)
+            bestsong = songaudio.getbestaudio()
+            playsong = bestsong.url
+            songmedium = Instance.media_new(playsong)
+            songmedium.get_mrl()
+            player.set_media(songmedium)
+            fstmusicc = prefix+ "/song2" + suffix
+            m.load(fstmusicc)
+            m.play()
+            time.sleep(2)
+            player.play()
+        elif "mantra" in txt or "mantras" in txt:
+            urlMel = random.choice(mantraList)
+            video = pafy.new(urlMel)
+            bestmel = video.getbest()
+            playurl = bestmel.url
+            Media = Instance.media_new(playurl)
+            Media.get_mrl()
+            player.set_media(Media)
+            pygame.init()
+            mantra = prefix + "mantratxt" + suffix
+            m.load(mantra)
+            m.play()
+            time.sleep(3)
+            player.play()
+        elif "search" in txt or "query" in txt or "sawaal" in txt or "sawal" in txt or "prashna" in txt or "prashn" in txt or "saval" in txt or "savaal" in txt or "question" in txt:
+            print(search)
+            pygame.init()
+            m.load("voice/misc/beep-06.mp3")
+            m.play()
+            with sr.Microphone() as srce:
+                r.adjust_for_ambient_noise(srce, duration = 0.5)
+                audiosearch = r.listen(srce, phrase_time_limit = 5)
+                search = r.recognize_google(audiosearch)
+            search = search.lower()
+            search = search.replace(" ", "%20")
+        '''elif "bollywood" in txt or "bolly" in txt or "song" in txt or "songs" in txt:
+            urlBol = random.choice(bollyList)
+            video = pafy.new(urlBol)
+            bestb = video.getbest()
+            playurl = bestb.url
+            Media = Instance.media_new(playurl)
+            Media.get_mrl()
+            player.set_media(Media)
+            winsound.PlaySound("bolly", winsound.SND_FILENAME)
+            player.play()'''
 ##        except:
 ##            pygame.init()
 ##            pygame.mixer.music.load("unrecognised.wav")
@@ -301,7 +299,7 @@ def voiceSearch():
 ##            print("Not recognized. Restarting.")
 ##            continue
 
-       
+   
 top = tkinter.Tk()
 top.title("RoboSwarakriti (Digital Edition)")
 top.geometry("2000x2500")

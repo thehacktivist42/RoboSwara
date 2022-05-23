@@ -24,7 +24,7 @@ Copyright - © 2022, All Rights Reserved. Please do not copy without permission.
 * **Red Ribbon Musik** for Tu Hi Mere Naino Ka Tara (Lullaby)
 * **Rajshri** for Chanda Re Chanda Re (Lullaby)
 * **Sonic Octave Kids** for Jagmag Jugnu (Lullaby)
-* **Paul Paul Channel** for Ninna Ninna Lari Gao
+* **Paul Paul Channel** for Ninna Ninna Lari Gao (Lullaby)
 * **Sanskar TV** for Achyutam Keshavam, Ramayan Manka 108
 * **Sony Music** for Hey Govinda Hey Gopala, Shayad
 * **Anup Jalota** for Shri Krishna Govind Hare Murari
