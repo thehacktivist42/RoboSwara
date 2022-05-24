@@ -25,15 +25,5 @@ Copyright - © 2022, All Rights Reserved. Please do not copy without permission.
 * **Rajshri** for Chanda Re Chanda Re (Lullaby)
 * **Sonic Octave Kids** for Jagmag Jugnu (Lullaby)
 * **Paul Paul Channel** for Ninna Ninna Lari Gao (Lullaby)
-* **Sanskar TV** for Achyutam Keshavam, Ramayan Manka 108
-* **Sony Music** for Hey Govinda Hey Gopala, Shayad
-* **Anup Jalota** for Shri Krishna Govind Hare Murari
-* **Jagjit Singh** for Om Shivay Hari Om Shivay
-* **T-Series** for Hanuman Chalisa, Gayatri Mantra, Agar Tum Saath Ho, Tujhe Kitna Chahne Lage, Bekhayali, Garmi, Shani Mantra, Mahamrityunjaya Mantra
-* **Solis Music** for Instrumental Piano Music
-* **Marco Cirillo** for Guitar Music
-* **Alan Walker** for Faded (Instrumental)
-* **Music Temple** for Devi Mantra
-* **RDC Bhakti Sagar** for Om Namo Bhagwate Vasudevaya
-* **Shemaroo** for Om Namah Shivaya
+* **Sanskar TV** for Ramayan Manka 108
 * Any songs that are played using the Spotify and YouTube music services belong to their respective artists.
