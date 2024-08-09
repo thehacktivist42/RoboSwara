@@ -2,6 +2,8 @@
 This is the repository that contains everything about RoboSwarakriti, the Toy Doll created by students of Venkateshwar International School.  
 Copyright - © 2022, All Rights Reserved. Please do not copy without permission.  
 
+## Note: This repository is out-of-date by more than 2 years. Will be updated soon.
+
 ## Directory Guide  
 * **RoboSwara**
     * master
